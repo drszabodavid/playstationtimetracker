@@ -1,0 +1,9 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+    /* You can set flex-wrap and
+       flex-direction individually */
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+

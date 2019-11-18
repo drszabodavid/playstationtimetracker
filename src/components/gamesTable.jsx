@@ -4,21 +4,24 @@ import Table from "./common/table";
 
 class MoviesTable extends Component {
   columns = [
-    { path: "title", label: "Title" },
+    { path: "name", label: "Title" },
+    { path: "timeSpent", label: "My time" },
+    { path: "gameplayMain", label: "Main Story" },
+    { path: "gameplayMainExtra", label: "Main + Extra" },
+    { path: "gameplayCompletionist", label: "Completionist" },
+    { path: "remainingTime", label: "Required time to finish" },
     { path: "genre.name", label: "Genre" },
-    { path: "numberInStock", label: "Stock" },
-    { path: "dailyRentalRate", label: "Rate" },
     {
       key: "like",
-      content: movie => (
-        <Like liked={movie.liked} onClick={() => this.props.onLike(movie)} />
+      content: game => (
+        <Like liked={game.liked} onClick={() => this.props.onLike(game)} />
       )
     },
     {
       key: "delete",
-      content: movie => (
+      content: game => (
         <button
-          onClick={() => this.props.onDelete(movie)}
+          onClick={() => this.props.onDelete(game)}
           className="btn btn-danger btn-sm"
         >
           Delete
@@ -28,12 +31,12 @@ class MoviesTable extends Component {
   ];
 
   render() {
-    const { movies, sortColumn, onSort } = this.props;
+    const { games, sortColumn, onSort } = this.props;
 
     return (
       <Table
         columns={this.columns}
-        data={movies}
+        data={games}
         sortColumn={sortColumn}
         onSort={onSort}
       />

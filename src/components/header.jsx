@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./header.css";
+import "./css/header.css";
 
 class Header extends Component {
   render() {
@@ -7,10 +7,12 @@ class Header extends Component {
       <div className="header-image">
         <div className="header-text">
           <h1>PlayStation Time Counter</h1>
-          <p className="header-subtext">Record how much time you waste on gaming</p>
+          <p className="header-subtext">
+            Record how much time you waste on gaming
+          </p>
           <div>
             <button className="header-button">Register</button>
-            <button className="header-button">login</button>
+            <button className="header-button">Login</button>
           </div>
         </div>
       </div>

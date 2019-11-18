@@ -1,13 +1,11 @@
 
 @font-face {
   font-family: zrnicimport;
-  src:url("../fonts/zrnic___.ttf")
+  src:url("../../fonts/zrnic___.ttf")
 
 }
-/* The hero image */
 .header-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: url("../images/logo1.jpg");
+  background-image: url("../../images/logo1.jpg");
   background-position: initial;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,13 +15,12 @@
 
 .header-button {
   padding: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-right: 10px;
   height: fit-content;
   width: 70px;
 }
 
-/* Place text in the middle of the image */
 .header-text {
   text-align: left;
   transform: translate(2%, 2%);

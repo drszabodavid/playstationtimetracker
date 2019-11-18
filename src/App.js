@@ -1,18 +1,16 @@
 import React, { Component } from "react";
-import "./App.css";
-import Movies from "./components/movies";
+import Games from "./components/games";
 import Header from "./components/header";
+import Search from "./components/search"
 
 class App extends Component {
   render() {
     return (
-      
-        <div>
-          <Header />
-          <main className="container">
-          {/* <Movies /> */}
-          </main>
-        </div>
+      <div>
+        <Header />
+        <Search />
+        {/* <Games /> */}
+      </div>
     );
   }
 }

@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import { getMovies } from "../services/fakeMovieService";
 import ListGroup from "./common/listGroup";
 import Pagination from "./common/pagination";
 import { paginate } from "../utils/paginate";
 import { getGenres } from "../services/fakeGenreService";
-import MoviesTable from "./moviesTable";
+import GamesTable from "./gamesTable";
 import _ from "lodash";
+import "./css/games.css"
+import { getGames } from "../services/fakeMovieService";
 
-class Movies extends Component {
+class Games extends Component {
   state = {
-    movies: [],
+    games: [],
     genres: [],
     pageSize: 4,
     currentPage: 1,
@@ -18,23 +19,24 @@ class Movies extends Component {
 
   componentDidMount() {
     const genres = [{ _id: "", name: "All Genres" }, ...getGenres()];
+  
     this.setState({
-      movies: getMovies(),
-      genres: genres
+      genres: genres,
+      games: getGames()
     });
   }
 
-  handleDelete = movie => {
-    const movies = this.state.movies.filter(m => m._id !== movie._id);
-    this.setState({ movies: movies });
+  handleDelete = game => {
+    const games = this.state.games.filter(g => g.id !== game.id);
+    this.setState({ games: games });
   };
 
-  handleLike = movie => {
-    const movies = [...this.state.movies];
-    const index = movies.indexOf(movie);
-    movies[index] = { ...movies[index] };
-    movies[index].liked = !movies[index].liked;
-    this.setState({ movies });
+  handleLike = game => {
+    const games = [...this.state.games];
+    const index = games.indexOf(game);
+    games[index] = { ...games[index] };
+    games[index].liked = !games[index].liked;
+    this.setState({ games });
   };
 
   handlePageChange = page => {
@@ -53,7 +55,7 @@ class Movies extends Component {
     const {
       pageSize,
       currentPage,
-      movies: allMovies,
+      games: allgames,
       selectedGenre,
       sortColumn
     } = this.state;
@@ -61,30 +63,30 @@ class Movies extends Component {
     //filter data
     const filtered =
       selectedGenre && selectedGenre._id
-        ? allMovies.filter(m => m.genre._id === selectedGenre._id)
-        : allMovies;
+        ? allgames.filter(m => m.genre._id === selectedGenre._id)
+        : allgames;
 
     // sort data
     const sorted = _.orderBy(filtered, [sortColumn.path], [sortColumn.order]);
 
     // paginate data
-    const movies = paginate(sorted, currentPage, pageSize);
+    const games = paginate(sorted, currentPage, pageSize);
 
-    return { totalCount: filtered.length, data: movies };
+    return { totalCount: filtered.length, data: games };
   };
 
   render() {
-    const { length: count } = this.state.movies;
+    const { length: count } = this.state.games;
     const { pageSize, currentPage, sortColumn } = this.state;
 
     //table.table>thead>tr>th*4 => zen coding legenerálja a táblát
-    if (count === 0) return <p>There are no movies in the database</p>;
+    if (count === 0) return <p className="under-header-text">There are no games in the database</p>;
 
-    const { totalCount, data: movies } = this.getPagedData();
+    const { totalCount, data: games } = this.getPagedData();
 
     return (
       <div className="row">
-        <div className="col-3">
+        <div className="col-2">
           <ListGroup
             onItemSelect={this.handleGenreSelect}
             items={this.state.genres}
@@ -92,11 +94,11 @@ class Movies extends Component {
           />
         </div>
         <div className="col">
-          <p>Showing {totalCount} movies in the database.</p>
+          <p className="under-header-text">Showing {totalCount} games in the database.</p>
 
-          <MoviesTable
+          <GamesTable
             sortColumn={sortColumn}
-            movies={movies}
+            games={games}
             onLike={this.handleLike}
             onDelete={this.handleDelete}
             onSort={this.handleSort}
@@ -114,4 +116,4 @@ class Movies extends Component {
   }
 }
 
-export default Movies;
+export default Games;
