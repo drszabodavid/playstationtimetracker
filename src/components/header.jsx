@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./css/header.css";
 
 class Header extends Component {
@@ -12,7 +13,9 @@ class Header extends Component {
           </p>
           <div>
             <button className="header-button">Register</button>
-            <button className="header-button">Login</button>
+            <Link to="/games" role="button" className="header-button">
+              <button>Login</button>
+            </Link>
           </div>
         </div>
       </div>

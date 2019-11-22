@@ -8,7 +8,8 @@ class Search extends Component {
   onChange = e => {
     e.preventDefault();
     e.stopPropagation();
-    this.setState({ [e.target.name]: e.target.value });
+    const name = e.target.value;
+    this.setState({ searchedGame: name });
   };
 
   onSubmit = e => {
@@ -38,17 +39,15 @@ class Search extends Component {
   };
 
   renderList = game => {
-   
     return (
-      <div
-        onClick={() => {
-          if (window.confirm("Add this game to your collection?"))
-            this.handleAddition(game.name);
-        }}
-      >
+      <div>
         <div className="clear" />
         <div className="clear" />
         <li
+          onClick={() => {
+            if (window.confirm("Add this game to your collection?"))
+              this.handleAddition(game.name);
+          }}
           className="back_darkish back_darkishown"
           style={{
             margin: "10px",
