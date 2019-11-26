@@ -3,6 +3,30 @@ import Like from "./common/like";
 import Table from "./common/table";
 
 class MoviesTable extends Component {
+  getCompletedButton = game => {
+    const buttonStyle = game.completed
+      ? "btn btn-disabled btn-sm disabled"
+      : "btn btn-success btn-sm";
+
+    if (!game.completed) {
+      return (
+        <button
+          onClick={() => this.props.onComplete(game)}
+          className={buttonStyle}
+        >
+          Completed
+        </button>
+      );
+    } return (
+      <button
+        onClick={() => this.props.onComplete(game)}
+        className={buttonStyle}
+      >
+        Reopen
+      </button>
+    );
+  };
+
   columns = [
     { path: "name", label: "Title" },
     { path: "timeSpent", label: "My time" },
@@ -10,12 +34,15 @@ class MoviesTable extends Component {
     { path: "gameplayMainExtra", label: "Main + Extra" },
     { path: "gameplayCompletionist", label: "Completionist" },
     { path: "remainingTime", label: "Required time to finish" },
-    { path: "genre.name", label: "Genre" },
     {
       key: "like",
       content: game => (
         <Like liked={game.liked} onClick={() => this.props.onLike(game)} />
       )
+    },
+    {
+      key: "completed",
+      content: game => this.getCompletedButton(game)
     },
     {
       key: "delete",

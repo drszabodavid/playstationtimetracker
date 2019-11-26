@@ -14,8 +14,8 @@ const games = [
       ["gameplayMainExtra", "Main + Extra"],
       ["gameplayCompletionist", "Completionist"]
     ],
-    liked: false,
-    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
+    liked: true,
+    completed : false,
     timeSpent: 3,
     get remainingTime() {
       return this.gameplayMain - this.timeSpent;
@@ -35,8 +35,8 @@ const games = [
       ["gameplayMainExtra", "Main + Extra"],
       ["gameplayCompletionist", "Completionist"]
     ],
-    liked: false,
-    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
+    liked: true,
+    completed : false,
     timeSpent: 3,
     get remainingTime() {
       return this.gameplayMain - this.timeSpent;
@@ -57,7 +57,7 @@ const games = [
       ["gameplayCompletionist", "Completionist"]
     ],
     liked: false,
-    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
+    completed : true,
     timeSpent: 3,
     get remainingTime() {
       return this.gameplayMain - this.timeSpent;
@@ -79,7 +79,7 @@ const games = [
     ],
     liked: false,
     timeSpent: 3,
-    genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
+    completed : true,
     get remainingTime() {
       return this.gameplayMain - this.timeSpent;
     }
@@ -99,7 +99,7 @@ const games = [
       ["gameplayCompletionist", "Completionist"]
     ],
     liked: false,
-    genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
+    completed : false,
     timeSpent: 3,
     get remainingTime() {
       return this.gameplayMain - this.timeSpent;
@@ -120,7 +120,7 @@ const games = [
       ["gameplayCompletionist", "Completionist"]
     ],
     liked: false,
-    genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
+    completed : false,
     timeSpent: 3,
     get remainingTime() {
       return this.gameplayMain - this.timeSpent;
@@ -141,7 +141,7 @@ const games = [
       ["gameplayCompletionist", "Completionist"]
     ],
     liked: false,
-    genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
+    completed : false,
     timeSpent: 3,
     get remainingTime() {
       return this.gameplayMain - this.timeSpent;
@@ -162,7 +162,7 @@ const games = [
       ["gameplayCompletionist", "Completionist"]
     ],
     liked: false,
-    genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
+    completed : false,
     timeSpent: 3,
     get remainingTime() {
       return this.gameplayMain - this.timeSpent;
@@ -183,7 +183,7 @@ const games = [
       ["gameplayCompletionist", "Completionist"]
     ],
     liked: false,
-    genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
+    completed : false,
     timeSpent: 3,
     get remainingTime() {
       return this.gameplayMain - this.timeSpent;
@@ -204,7 +204,7 @@ const games = [
       ["gameplayCompletionist", "Completionist"]
     ],
     liked: false,
-    genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
+    completed : false,
     timeSpent: 3,
     get remainingTime() {
       return this.gameplayMain - this.timeSpent;

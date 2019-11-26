@@ -1,13 +1,16 @@
 import React from "react";
-import "./css/listGroup.css"
+import "./css/listGroup.css";
 
 const ListGroup = ({
   items,
-  textProperty,
   valueProperty,
   onItemSelect,
   selectedItem
 }) => {
+  {
+    console.log(items);
+  }
+
   return (
     <ul className="list-group genres">
       {items.map(item => (
@@ -20,7 +23,7 @@ const ListGroup = ({
               : "list-group-item genres-field"
           }
         >
-          {item[textProperty]}
+          {item}
         </li>
       ))}
     </ul>

@@ -5,23 +5,24 @@ import { paginate } from "../utils/paginate";
 import { getGenres } from "../services/fakeGenreService";
 import GamesTable from "./gamesTable";
 import _ from "lodash";
-import "./css/games.css"
+import "./css/games.css";
 import { getGames } from "../services/fakeMovieService";
 
 class Games extends Component {
   state = {
     games: [],
-    genres: [],
+    types: ["Completed", "Starred", "All Games"],
     pageSize: 4,
     currentPage: 1,
+    selectedType: "",
     sortColumn: { path: "title", order: "asc" }
   };
 
   componentDidMount() {
-    const genres = [{ _id: "", name: "All Games" }, ...getGenres()];
-  
+    // const genres = [{ _id: "", name: "All Games" }, ...getGenres()];
+
     this.setState({
-      genres: genres,
+      // genres: genres,
       games: getGames()
     });
   }
@@ -29,6 +30,15 @@ class Games extends Component {
   handleDelete = game => {
     const games = this.state.games.filter(g => g.id !== game.id);
     this.setState({ games: games });
+  };
+
+  handleComplete = game => {
+    const games = [...this.state.games];
+    const index = games.indexOf(game);
+    games[index] = { ...games[index] };
+    games[index].completed = !games[index].completed;
+    games[index].liked = !games[index].liked;
+    this.setState({ games });
   };
 
   handleLike = game => {
@@ -43,12 +53,22 @@ class Games extends Component {
     this.setState({ currentPage: page });
   };
 
-  handleGenreSelect = genre => {
-    this.setState({ selectedGenre: genre, currentPage: 1 });
+  handleGenreSelect = type => {
+    this.setState({ selectedType: type, currentPage: 1 });
   };
 
   handleSort = sortColumn => {
     this.setState({ sortColumn });
+  };
+
+  filterGames = selectedType => {
+    if (selectedType === "Completed") {
+      return this.state.games.filter(game => game.completed === true);
+    }
+    if (selectedType === "Starred") {
+      return this.state.games.filter(game => game.liked === true);
+    }
+    return this.state.games;
   };
 
   getPagedData = () => {
@@ -56,15 +76,12 @@ class Games extends Component {
       pageSize,
       currentPage,
       games: allgames,
-      selectedGenre,
+      selectedType,
       sortColumn
     } = this.state;
 
     //filter data
-    const filtered =
-      selectedGenre && selectedGenre._id
-        ? allgames.filter(m => m.genre._id === selectedGenre._id)
-        : allgames;
+    const filtered = this.filterGames(selectedType);
 
     // sort data
     const sorted = _.orderBy(filtered, [sortColumn.path], [sortColumn.order]);
@@ -80,7 +97,10 @@ class Games extends Component {
     const { pageSize, currentPage, sortColumn } = this.state;
 
     //table.table>thead>tr>th*4 => zen coding legenerálja a táblát
-    if (count === 0) return <p className="under-header-text">There are no games in the database</p>;
+    if (count === 0)
+      return (
+        <p className="under-header-text">There are no games in the database</p>
+      );
 
     const { totalCount, data: games } = this.getPagedData();
 
@@ -89,12 +109,14 @@ class Games extends Component {
         <div className="col-2">
           <ListGroup
             onItemSelect={this.handleGenreSelect}
-            items={this.state.genres}
-            selectedItem={this.state.selectedGenre}
+            items={this.state.types}
+            selectedItem={this.state.selectedType}
           />
         </div>
         <div className="col">
-          <p className="under-header-text">Showing {totalCount} games in the database.</p>
+          <p className="under-header-text">
+            Showing {totalCount} games in the database.
+          </p>
 
           <GamesTable
             sortColumn={sortColumn}
@@ -102,6 +124,7 @@ class Games extends Component {
             onLike={this.handleLike}
             onDelete={this.handleDelete}
             onSort={this.handleSort}
+            onComplete={this.handleComplete}
           />
 
           <Pagination
