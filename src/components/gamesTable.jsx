@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Like from "./common/like";
 import Table from "./common/table";
+import Timer from "./timer";
+import "./css/games.css";
 
 class MoviesTable extends Component {
   getCompletedButton = game => {
@@ -17,7 +19,8 @@ class MoviesTable extends Component {
           Completed
         </button>
       );
-    } return (
+    }
+    return (
       <button
         onClick={() => this.props.onComplete(game)}
         className={buttonStyle}
@@ -28,6 +31,10 @@ class MoviesTable extends Component {
   };
 
   columns = [
+    {
+      key: "record",
+      content: game => <Timer handleRecord={this.props.handleRecord} game={game}>timer</Timer>
+    },
     { path: "name", label: "Title" },
     { path: "timeSpent", label: "My time" },
     { path: "gameplayMain", label: "Main Story" },
@@ -37,7 +44,11 @@ class MoviesTable extends Component {
     {
       key: "like",
       content: game => (
-        <Like liked={game.liked} completed={game.completed} onClick={() => this.props.onLike(game)} />
+        <Like
+          liked={game.liked}
+          completed={game.completed}
+          onClick={() => this.props.onLike(game)}
+        />
       )
     },
     {

@@ -1,4 +1,3 @@
-
 let games = [
   {
     gameplayCompletionist: 91,
@@ -158,23 +157,18 @@ export function getGame(id) {
 }
 
 export function saveGame(game) {
-  console.log("hello from the fake world ", game)
   game.timeSpent = 0;
   const newGames = [...games, game];
   games = newGames;
+}
 
-  // let gameInDb = games.find(m => game.id === game.id) || {};
-  // gameInDb.name = movie.name;
-  // gameInDb.genre = genresAPI.genres.find(g => game.id === game.genreId);
-  // gameInDb.numberInStock = movie.numberInStock;
-  // gameInDb.dailyRentalRate = movie.dailyRentalRate;
+export function updatePlayTime(game, time) {
+  time = time * 10000;
+  let hour = Math.floor(time / 1000 / 60 / 60);
+  let gameToChange = games.find(g => g.id === game.id);
+  console.log(hour);
 
-  // if (!movieInDb.id) {
-  //   movieInDb._id = Date.now();
-  //   movies.push(movieInDb);
-  // }
-
-  // return movieInDb;
+  gameToChange.timeSpent += hour;
 }
 
 export function deleteGame(id) {

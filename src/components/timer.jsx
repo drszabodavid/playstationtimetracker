@@ -1,19 +1,16 @@
+import { updatePlayTime } from "../services/fakeGameService";
+
 const React = require("react");
 const ms = require("pretty-ms");
 
 class Timer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      time: 0,
-      isOn: false,
-      start: 0
-    };
-    this.startTimer = this.startTimer.bind(this);
-    this.stopTimer = this.stopTimer.bind(this);
-    this.resetTimer = this.resetTimer.bind(this);
-  }
-  startTimer() {
+  state = {
+    time: 0,
+    isOn: false,
+    start: 0
+  };
+
+  startTimer = () => {
     this.setState({
       isOn: true,
       time: this.state.time,
@@ -26,41 +23,46 @@ class Timer extends React.Component {
         }),
       1
     );
-  }
-  stopTimer() {
-    this.setState({ isOn: false });
-    clearInterval(this.timer);
-  }
-  resetTimer() {
-    this.setState({ time: 0, isOn: false });
-  }
-  render() {
-    let start =
-      this.state.time == 0 ? (
-        <button onClick={this.startTimer}>start</button>
-      ) : null;
-    let stop =
-      this.state.time == 0 || !this.state.isOn ? null : (
-        <button onClick={this.stopTimer}>stop</button>
-      );
-    let resume =
-      this.state.time == 0 || this.state.isOn ? null : (
-        <button onClick={this.startTimer}>resume</button>
-      );
-    let reset =
-      this.state.time == 0 || this.state.isOn ? null : (
-        <button onClick={this.resetTimer}>reset</button>
-      );
+  };
 
-    return (
-      <div>
-        <h3>timer: {ms(this.state.time)}</h3>
-        {start}
-        {resume}
-        {stop}
-        {reset}
-      </div>
-    );
+  stopTimer = () => {
+    this.setState({ isOn: false, time : 0 });
+    clearInterval(this.timer);
+    updatePlayTime(this.props.game, this.state.time);
+    this.props.handleRecord()
+  };
+
+  saveTime = () => {
+    //
+  };
+
+  renderButton = () => {
+    if (this.state.time == 0) {
+      console.log("clikked start");
+      return (
+        <button className="btn btn-danger btn-sm" onClick={this.startTimer}>
+          Start
+        </button>
+      );
+    }
+    if (!this.state.time == 0 && !this.state.isOn) {
+      return (
+        <button className="btn btn-danger btn-sm" onClick={this.startTimer}>
+          Resume
+        </button>
+      );
+    } else {
+      return (
+        <button className="btn btn-danger btn-sm" onClick={this.stopTimer}>
+          {ms(this.state.time)}
+        </button>
+      );
+    }
+  };
+
+  render() {
+    return <div style={{ width: 50, height: 50 }}>{this.renderButton()}</div>;
   }
 }
-module.exports = Timer;
+
+export default Timer;

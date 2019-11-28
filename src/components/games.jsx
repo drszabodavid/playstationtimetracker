@@ -88,6 +88,12 @@ class Games extends Component {
     return { totalCount: filtered.length, data: games };
   };
 
+  handleRecord = () => {
+    this.setState({
+      games: getGames()
+    });
+  };
+
   render() {
     const { length: count } = this.state.games;
     const { pageSize, currentPage, sortColumn } = this.state;
@@ -114,6 +120,7 @@ class Games extends Component {
           </p>
 
           <GamesTable
+            handleRecord={this.handleRecord}
             sortColumn={sortColumn}
             games={games}
             onLike={this.handleLike}

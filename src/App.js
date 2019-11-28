@@ -12,7 +12,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Timer />
         <Header />
         <Switch>
           <Route path="/register" component={RegisterForm} />

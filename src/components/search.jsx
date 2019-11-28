@@ -122,14 +122,6 @@ class Search extends Component {
           </form>
         </div>
         <div id="global_search_content" className="search_list">
-          {/* {this.state.searchedGame !== null ? (
-            <h3 className="global_padding shadow_box back_blue center">
-              We found {this.state.searchData.length} games with "
-              {this.state.searchedGame}"
-            </h3>
-          ) : (
-            ""
-          )} */}
           <div className="flex-container" style={{ width: "fit-content" }}>
             {this.state.searchData.map(game => this.renderList(game))}
           </div>

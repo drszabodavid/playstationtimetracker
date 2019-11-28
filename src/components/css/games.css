@@ -1,3 +1,8 @@
 .under-header-text {
   margin-top: 20px;
 }
+
+.timerbutton {
+  width: 30px;
+  height: 30px;
+}
