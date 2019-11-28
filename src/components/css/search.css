@@ -459,21 +459,20 @@ textarea.back_blue {
   height: 8px;
   width: 8px;
 }
-::-webkit-scrollbar-corner {
-  background-color: transparent;
-}
-::-webkit-scrollbar:horizontal {
-  border-top: 0;
-}
-::-webkit-scrollbar:vertical {
-  border-left: 0;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(150, 150, 150, 0.75);
-}
-::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(150, 150, 150, 0.5);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -567,170 +566,6 @@ textarea.back_blue {
 .search_list_tidbit_long {
   width: 62%;
 }
-.game_image {
-  margin-bottom: 10px;
-  max-height: 380px;
-  overflow: hidden;
-  text-align: center;
-}
-.game_options {
-  border: 1px solid #3f3f3f;
-  cursor: pointer;
-  display: inline-block;
-  float: left;
-  margin: 3px 0;
-  padding: 3px 1% 3px 3%;
-  width: 49%;
-}
-.game_options:nth-child(11) {
-  width: 100%;
-}
-.game_options:nth-child(odd) {
-  margin: 3px 2% 3px 0;
-}
-.game_options:hover {
-  background: #2577b6;
-  text-decoration: none;
-}
-.game_options .num {
-  float: right;
-  padding: 0 5px;
-}
-.game_times {
-  font-size: 0;
-}
-.game_times h2 {
-  font-size: 18px;
-  padding: 5px 10px 0;
-  background: rgba(0, 0, 0, 0.1);
-}
-.game_times li {
-  display: inline-block;
-  font-size: 19px;
-}
-.game_times li.full {
-  width: 100%;
-}
-.game_times li h5 {
-  font-weight: 400;
-}
-.game_times li div {
-  border-top: 1px solid #d9d9d9;
-}
-.game_main_table {
-  min-width: 720px;
-}
-.game_main_table tbody tr td:first-child {
-  width: 180px;
-}
-.game_edit_table td {
-  padding: 0;
-}
-.game_edit_table td:nth-child(1) {
-  font-weight: 700;
-}
-.game_edit_table td .form_text,
-.game_edit_table td .form_textarea {
-  width: 100%;
-}
-#user_nav_toggle {
-  margin: 0 0.25%;
-}
-.user_games_nav,
-.user_games_nav_toggle {
-  border: 1px solid #333;
-  cursor: pointer;
-  float: left;
-  overflow: hidden;
-  padding: 5px;
-  text-align: center;
-}
-a.user_games_nav {
-  text-decoration: none;
-}
-.user_games_nav_toggle {
-  border: 1px solid #fff;
-}
-.user_games_opt {
-  float: right;
-}
-.user_games_random {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 65%;
-  width: 35px;
-}
-.user_game_list td:nth-child(1) a {
-  font-weight: 700;
-  margin-right: 5px;
-}
-.user_game_list td:nth-child(1) span {
-  display: inline-block;
-  font-size: 85%;
-  font-weight: 400;
-}
-.user_game_list td:nth-child(2) {
-  text-align: left;
-  width: 170px;
-}
-.user_game_list td:nth-child(2) span {
-  font-weight: 700;
-}
-.user_game_list td:nth-child(3) {
-  text-align: center;
-  width: 30px;
-}
-.user_game_list td:nth-child(4) {
-  padding: 0 2px;
-  text-align: center;
-}
-.user_game_list td:nth-child(4) img {
-  width: 20px;
-}
-.user_game_list td:nth-child(4).long {
-  width: 100px;
-}
-.user_game_list td:nth-child(4).short {
-  width: 20px;
-}
-.user_game_detail h4,
-.user_friends_list h4 {
-  border-right: 1px solid #e4e4e4;
-  margin-right: 4px;
-  padding: 0 5px;
-  width: 100px;
-}
-.user_game_detail h5,
-.user_friends_list h5 {
-  border-right: 1px solid #e4e4e4;
-  float: left;
-  padding: 0 5px;
-  text-align: right;
-  width: 100px;
-}
-.user_game_detail span {
-  padding: 0 5px;
-}
-.user_friends_list_img {
-  float: left;
-  height: 75px;
-  overflow: hidden;
-  text-align: center;
-  vertical-align: top;
-  width: 75px;
-}
-.user_friends_list {
-  margin-left: 85px;
-}
-.footer {
-  clear: both;
-  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  padding: 20px 0;
-  width: 100%;
-}
-.footer li {
-  line-height: 30px;
-  list-style: none;
-}
+
+
+

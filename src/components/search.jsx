@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {saveGame} from '../services/fakeGameService'
 import "./css/search.css";
 import "./css/searchbar.css";
 
@@ -34,8 +35,8 @@ class Search extends Component {
     });
   }
 
-  handleAddition = name => {
-    console.log("clicked on ", name);
+  handleAddition = game => {
+    saveGame(game)
   };
 
   renderList = game => {
@@ -46,7 +47,7 @@ class Search extends Component {
         <li
           onClick={() => {
             if (window.confirm("Add this game to your collection?"))
-              this.handleAddition(game.name);
+              this.handleAddition(game);
           }}
           className="back_darkish back_darkishown"
           style={{
@@ -55,7 +56,7 @@ class Search extends Component {
             marginRight: "30px",
             width: "450px",
             height: "180px",
-            backgroundImage: `linear-gradient(rgb(31, 31, 31), rgba(31, 31, 31, 0.9)), url(${game.imageUrl})`
+            backgroundImage: `linear-gradient(rgb(29, 50, 84), rgba(31, 31, 31, 0.9)), url(${game.imageUrl})`
           }}
         >
           {" "}
