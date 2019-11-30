@@ -41,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": ["https://howlongtobeat.com/", "http://localhost:3000", "https://howlongtobeat.com/search_results.php?page=1"]
+  "proxy": "https://howlongtobeat.com/"
 }
