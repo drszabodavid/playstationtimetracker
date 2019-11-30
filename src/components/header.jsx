@@ -12,11 +12,11 @@ class Header extends Component {
             Record how much time you waste on gaming
           </p>
           <div>
-            <Link to="/register" role="button" className="header-button">
-              <button className="header-button">Register</button>
+            <Link to="/" role="button" className="header-button">
+              <button className="header-button">Search</button>
             </Link>
             <Link to="/games" role="button" className="header-button">
-              <button>Login</button>
+              <button>My games</button>
             </Link>
           </div>
         </div>

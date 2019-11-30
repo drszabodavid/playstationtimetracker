@@ -32,10 +32,6 @@ class Timer extends React.Component {
     this.props.handleRecord()
   };
 
-  saveTime = () => {
-    //
-  };
-
   renderButton = () => {
     if (this.state.time == 0) {
       console.log("clikked start");
