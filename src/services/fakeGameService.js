@@ -10,7 +10,7 @@ let games = [
     completed: false,
     timeSpent: 3,
     get remainingTime() {
-      return this.gameplayMain - this.timeSpent;
+      return this.gameplayMain - this.timeSpent > 0 ? this.gameplayMain - this.timeSpent : 0;
     }
   },
   {
@@ -24,7 +24,7 @@ let games = [
     completed: false,
     timeSpent: 0,
     get remainingTime() {
-      return this.gameplayMain - this.timeSpent;
+        return this.gameplayMain - this.timeSpent > 0 ? this.gameplayMain - this.timeSpent : 0;
     }
   },
   {
@@ -39,7 +39,7 @@ let games = [
     completed: true,
     timeSpent: 3,
     get remainingTime() {
-      return this.gameplayMain - this.timeSpent;
+        return this.gameplayMain - this.timeSpent > 0 ? this.gameplayMain - this.timeSpent : 0;
     }
   },
   {
@@ -54,7 +54,7 @@ let games = [
     timeSpent: 0,
     completed: false,
     get remainingTime() {
-      return this.gameplayMain - this.timeSpent;
+        return this.gameplayMain - this.timeSpent > 0 ? this.gameplayMain - this.timeSpent : 0;
     }
   },
   {
@@ -68,7 +68,7 @@ let games = [
     completed: false,
     timeSpent: 0,
     get remainingTime() {
-      return this.gameplayMain - this.timeSpent;
+        return this.gameplayMain - this.timeSpent > 0 ? this.gameplayMain - this.timeSpent : 0;
     }
   },
   {
@@ -82,7 +82,7 @@ let games = [
     completed: false,
     timeSpent: 0,
     get remainingTime() {
-      return this.gameplayMain - this.timeSpent;
+        return this.gameplayMain - this.timeSpent > 0 ? this.gameplayMain - this.timeSpent : 0;
     }
   },
   {
@@ -97,7 +97,7 @@ let games = [
     completed: false,
     timeSpent: 3,
     get remainingTime() {
-      return this.gameplayMain - this.timeSpent;
+        return this.gameplayMain - this.timeSpent > 0 ? this.gameplayMain - this.timeSpent : 0;
     }
   },
   {
@@ -111,7 +111,7 @@ let games = [
     completed: false,
     timeSpent: 0,
     get remainingTime() {
-      return this.gameplayMain - this.timeSpent;
+        return this.gameplayMain - this.timeSpent > 0 ? this.gameplayMain - this.timeSpent : 0;
     }
   },
   {
@@ -127,7 +127,7 @@ let games = [
     completed: false,
     timeSpent: 0,
     get remainingTime() {
-      return this.gameplayMain - this.timeSpent;
+        return this.gameplayMain - this.timeSpent > 0 ? this.gameplayMain - this.timeSpent : 0;
     }
   },
   {
@@ -143,7 +143,7 @@ let games = [
     completed: false,
     timeSpent: 0,
     get remainingTime() {
-      return this.gameplayMain - this.timeSpent;
+        return this.gameplayMain - this.timeSpent > 0 ? this.gameplayMain - this.timeSpent : 0;
     }
   }
 ];

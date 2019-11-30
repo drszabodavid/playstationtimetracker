@@ -19,10 +19,11 @@ class Search extends Component {
       e.stopPropagation();
       let hltb = require("howlongtobeat");
       let hltbService = new hltb.HowLongToBeatService();
-      hltbService.search(this.state.searchedGame).then(result => {
+      hltbService.search(this.state.searchedGame, ).then(result => {
         console.log(result);
         this.setState({ searchData: result });
-      });
+      })
+
     }
   };
 

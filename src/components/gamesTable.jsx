@@ -13,7 +13,9 @@ class MoviesTable extends Component {
     if (!game.completed) {
       return (
         <button
-          onClick={() => this.props.onComplete(game)}
+          onClick={() =>{
+            if (window.confirm("Mark this game as completed?"))
+              this.props.onComplete(game)}}
           className={buttonStyle}
         >
           Completed
@@ -22,7 +24,9 @@ class MoviesTable extends Component {
     }
     return (
       <button
-        onClick={() => this.props.onComplete(game)}
+        onClick={() =>{
+          if (window.confirm("Do you want to reopen this game?"))
+            this.props.onComplete(game)}}
         className={buttonStyle}
       >
         Reopen
@@ -59,7 +63,9 @@ class MoviesTable extends Component {
       key: "delete",
       content: game => (
         <button
-          onClick={() => this.props.onDelete(game)}
+          onClick={() => {
+            if (window.confirm("Do you want to delete this game?"))
+              this.props.onDelete(game)}}
           className="btn btn-danger btn-sm"
         >
           Delete

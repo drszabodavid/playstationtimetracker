@@ -3,12 +3,13 @@ import Games from "./components/games";
 import Header from "./components/header";
 import Search from "./components/search";
 import NotFound from "./components/notFound";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import "./App.css"
 
 class App extends Component {
   render() {
     return (
-      <div>
+        <div className="appclass">
         <Header />
         <Switch>
           <Route path="/games" component={Games} />
