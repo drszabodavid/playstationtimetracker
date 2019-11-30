@@ -33,6 +33,10 @@ class Timer extends React.Component {
   };
 
   renderButton = () => {
+    if (this.props.game.completed){
+      return null;
+    }
+
     if (this.state.time == 0) {
       console.log("clikked start");
       return (
