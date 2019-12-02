@@ -11,7 +11,7 @@ I recommend the Moesif CORS extension for Chrome.
 This is a demo project I made to get familiar with React, frondend development and the usage of APIs.
 The purpose of the app is to track your gaming process by registering ow many hours you spend on gaming and save this data  into your database. Also, the remainging time to finish a game is also calculating accordingly.
 
-Currently there's no backand added to the application and it works with a **preloaded database**.\
+Currently there's no backand added to the application and it works with a **preloaded database**.
 
 ## How to use
 
@@ -33,6 +33,10 @@ The starred games are filtered on the 'Starred' tab and the completed ones on th
 If the timer is started it counts the gaming time and if paused, the interval gets added to 'My Time' field and the new 'Remaing Time' is calculated.
 
 ![full2](https://user-images.githubusercontent.com/35307122/69967429-a59ab780-1518-11ea-85ee-e90c36b7e510.png)
+
+## Future plans
+
+Currently I'm working on the backend part of the application. My plan is to finish the user handling so users can be registered, login and get their own database with unique saved games.
 
 
 
