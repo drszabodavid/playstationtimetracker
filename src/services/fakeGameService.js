@@ -163,8 +163,6 @@ export function getGame(id) {
 
 export function saveGame(game) {
 
-    console.log(game);
-
     let gameToSave = {
         "UserId" : 2,
         "id" : game["id"],
@@ -173,9 +171,7 @@ export function saveGame(game) {
         "gameplayCompletionist" : game["gameplayCompletionist"],
         "gameplayMain" : game["gameplayMain"],
         "gameplayMainExtra" : game["gameplayMainExtra"],
-    }
-
-    console.log(gameToSave)
+    };
 
     axios.post("http://localhost:8080/games/save", gameToSave)
         .then(response => {
@@ -198,8 +194,7 @@ export function updatePlayTime(game, time) {
     // gameToChange.timeSpent += hour;
 }
 
-export function deleteGame(id) {
-    // let gameInDb = games.find(g => g.id === id);
-    // games.splice(games.indexOf(gameInDb), 1);
-    // return gameInDb;
+export function deleteGame(selectedGame) {
+    let selectedGameId = selectedGame["id"];
+    return axios.delete(`http://localhost:8080/games/${selectedGameId}`);
 }

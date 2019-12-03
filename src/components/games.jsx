@@ -5,7 +5,7 @@ import {paginate} from "../utils/paginate";
 import GamesTable from "./gamesTable";
 import _ from "lodash";
 import "./css/games.css";
-import {getGames} from "../services/fakeGameService";
+import {deleteGame, getGames} from "../services/fakeGameService";
 import axios from "axios";
 
 class Games extends Component {
@@ -20,13 +20,13 @@ class Games extends Component {
 
     async componentDidMount() {
         const response = await getGames(2);
-        console.log(response.data)
         this.setState({games: response.data})
     }
 
-    handleDelete = game => {
-        const games = this.state.games.filter(g => g.id !== game.id);
-        this.setState({games: games});
+     handleDelete = async game => {
+        await deleteGame(game);
+        const {data} = await getGames(2);
+        this.setState({games: data})
     };
 
     handleComplete = game => {
