@@ -3,6 +3,7 @@ import Joi from "joi-browser";
 import Form from "./common/form";
 import * as userService from "../services/userService";
 import auth from "../services/authService"
+import "./css/form.css";
 
 class RegisterForm extends Form {
   state = {
@@ -43,8 +44,8 @@ class RegisterForm extends Form {
   render() {
     return (
       <div>
-        <h1>Register</h1>
-        <form onSubmit={this.handleSubmit}>
+        <span  style={{margin : 20 }} className="formheader"></span>
+        <form  className="formtext" style={{ display: "block", marginLeft : 200, marginRight : 200}} onSubmit={this.handleSubmit} >
           {this.renderInput("username", "E-mail")}
           {this.renderInput("password", "Password", "password")}
           {this.renderInput("name", "Name")}

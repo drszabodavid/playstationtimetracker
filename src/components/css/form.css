@@ -1,0 +1,21 @@
+.form-field {
+    margin: 0 auto;
+    display: block;
+}
+
+@font-face {
+    font-family: zrnicimport;
+    src: url("../../fonts/zrnic___.ttf")
+
+}
+
+.formheader {
+    font-family: zrnicimport;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.formtext {
+    font-family: zrnicimport;
+}
