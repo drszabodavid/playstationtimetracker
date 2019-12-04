@@ -5,6 +5,7 @@ import Timer from "./timer";
 import "./css/games.css";
 
 class MoviesTable extends Component {
+
   getCompletedButton = game => {
     const buttonStyle = game.completed
       ? "btn btn-disabled btn-sm disabled"

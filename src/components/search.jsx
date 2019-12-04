@@ -20,7 +20,6 @@ class Search extends Component {
       let hltb = require("howlongtobeat");
       let hltbService = new hltb.HowLongToBeatService();
       hltbService.search(this.state.searchedGame, ).then(result => {
-        console.log(result);
         this.setState({ searchData: result });
       })
 
@@ -31,7 +30,6 @@ class Search extends Component {
     let hltb = require("howlongtobeat");
     let hltbService = new hltb.HowLongToBeatService();
     hltbService.search("").then(result => {
-      console.log(result);
       this.setState({ searchData: result });
     });
   }

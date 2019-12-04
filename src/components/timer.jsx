@@ -7,10 +7,10 @@ class Timer extends React.Component {
   state = {
     time: 0,
     isOn: false,
-    start: 0
+    start: 0,
   };
 
-  startTimer = () => {
+  startTimer =  () => {
     this.setState({
       isOn: true,
       time: this.state.time,
@@ -25,11 +25,10 @@ class Timer extends React.Component {
     );
   };
 
-  stopTimer = () => {
-    this.setState({ isOn: false, time : 0 });
+  stopTimer = async () => {
+    await this.props.handleRecord(this.props.game, this.state.time);
     clearInterval(this.timer);
-    updatePlayTime(this.props.game, this.state.time);
-    this.props.handleRecord()
+    this.setState({ isOn: false, time : 0 });
   };
 
   renderButton = () => {
@@ -37,21 +36,14 @@ class Timer extends React.Component {
       return null;
     }
 
-    if (this.state.time == 0) {
-      console.log("clikked start");
+    if (this.state.time === 0) {
       return (
         <button className="btn btn-danger btn-sm" onClick={this.startTimer}>
           Start
         </button>
       );
     }
-    if (!this.state.time == 0 && !this.state.isOn) {
-      return (
-        <button className="btn btn-danger btn-sm" onClick={this.startTimer}>
-          Resume
-        </button>
-      );
-    } else {
+   else {
       return (
         <button className="btn btn-danger btn-sm" onClick={this.stopTimer}>
           {ms(this.state.time)}

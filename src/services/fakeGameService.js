@@ -1,6 +1,4 @@
-import axios from 'axios';
-
-
+import axios from "axios";
 
 //
 //
@@ -154,47 +152,49 @@ import axios from 'axios';
 //   }
 // ];
 export function getGames(userId) {
-    return axios.get(`http://localhost:8080/${userId}/games`);
+  console.log(userId);
+  return axios.get(`http://localhost:8080/${userId}/games`);
 }
 
 export function getGame(id) {
-    // return games.find(g => g.id === id);
+  // return games.find(g => g.id === id);
 }
 
 export function saveGame(game) {
+  let gameToSave = {
+    UserId: 2,
+    id: game["id"],
+    imageUrl: game["imageUrl"],
+    name: game["name"],
+    gameplayCompletionist: game["gameplayCompletionist"],
+    gameplayMain: game["gameplayMain"],
+    gameplayMainExtra: game["gameplayMainExtra"]
+  };
 
-    let gameToSave = {
-        "UserId" : 2,
-        "id" : game["id"],
-        "imageUrl" : game["imageUrl"],
-        "name" : game["name"],
-        "gameplayCompletionist" : game["gameplayCompletionist"],
-        "gameplayMain" : game["gameplayMain"],
-        "gameplayMainExtra" : game["gameplayMainExtra"],
-    };
-
-    axios.post("http://localhost:8080/games/save", gameToSave)
-        .then(response => {
-            if (response.status === 200) {
-                console.log(game);
-            } else {
-                throw new Error("Error");
-            }
-        }).catch(error => {
-        console.log(error)
-    });
+  axios.post("http://localhost:8080/games/save", gameToSave);
 }
 
-export function updatePlayTime(game, time) {
-    // time = time * 10000;
-    // let hour = Math.floor(time / 1000 / 60 / 60);
-    // let gameToChange = games.find(g => g.id === game.id);
-    // console.log(hour);
-    //
-    // gameToChange.timeSpent += hour;
+export function updatePlayTime(game, timeToSave) {
+  let timeScored = timeToSave * 10000;
+  let hour = Math.floor(timeScored / 1000 / 60 / 60);
+  let data = {
+    gameId: game["id"],
+    time: hour
+  };
+  axios.post("http://localhost:8080/games/update", data);
+}
+
+export function completeGame(game) {
+  let selectedGameId = game["id"];
+  axios.post(`http://localhost:8080/games/complete/${selectedGameId}`);
+}
+
+export function starGame(game) {
+  let selectedGameId = game["id"];
+  axios.post(`http://localhost:8080/games/star/${selectedGameId}`);
 }
 
 export function deleteGame(selectedGame) {
-    let selectedGameId = selectedGame["id"];
-    return axios.delete(`http://localhost:8080/games/${selectedGameId}`);
+  let selectedGameId = selectedGame["id"];
+  return axios.delete(`http://localhost:8080/games/${selectedGameId}`);
 }
