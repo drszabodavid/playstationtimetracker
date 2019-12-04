@@ -44,5 +44,5 @@ export function starGame(game) {
 
 export function deleteGame(selectedGame) {
   let selectedGameId = selectedGame["id"];
-  return http.delete(`/games/${selectedGameId}`);
+  http.post(`/games/${selectedGameId}`);
 }
