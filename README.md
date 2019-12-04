@@ -12,6 +12,7 @@ This is a demo project I made to get familiar with React, frontend development a
 The purpose of the app is to track your gaming process by registering how many hours you spend on gaming and save this data  into your database. Also, the remaining time to finish a game is also calculated accordingly.
 
 Currently there's no backend added to the application and it works with a **preloaded database**.
+The playtime is also modified so it counts hours instead of millisecond for testing purposes.
 
 ## How to use
 
