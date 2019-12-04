@@ -27,12 +27,12 @@ class Games extends Component {
   async componentDidMount() {
     const response = await getGames(this.state.currentUser);
     this.setState({ games: response.data });
-    this.forceUpdate();
   }
 
   reloadPageData = async () => {
     const response = await getGames(this.state.currentUser);
     this.setState({ games: response.data });
+    this.forceUpdate();
   };
 
   handleDelete = async game => {
