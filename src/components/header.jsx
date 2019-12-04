@@ -11,6 +11,7 @@ class Header extends Component {
           <p className="header-subtext">
             Record how much time you waste on gaming
           </p>
+          {this.props.user && (
           <div>
             <Link to="/" role="button" className="header-button">
               <button className="header-button">Search</button>
@@ -18,7 +19,21 @@ class Header extends Component {
             <Link to="/games" role="button" className="header-button">
               <button>My games</button>
             </Link>
+            <Link to="/logout" role="button" className="header-button">
+              <button style={{marginLeft : 10}}>Logout</button>
+            </Link>
           </div>
+          )}
+          {!this.props.user && (
+              <div>
+                <Link to="/register" role="button" className="header-button">
+                  <button className="header-button">Register</button>
+                </Link>
+                <Link to="/login" role="button" className="header-button">
+                  <button>Login</button>
+                </Link>
+              </div>
+          )}
         </div>
       </div>
     );

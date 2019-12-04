@@ -11,8 +11,7 @@ import {
   completeGame,
   starGame,
   updatePlayTime
-} from "../services/fakeGameService";
-import axios from "axios";
+} from "../services/GameService";
 
 class Games extends Component {
   state = {
@@ -22,11 +21,10 @@ class Games extends Component {
     currentPage: 1,
     selectedType: "",
     sortColumn: { path: "title", order: "asc" },
-    currentUser: 2
+    currentUser: localStorage.getItem("userId")
   };
 
   async componentDidMount() {
-    console.log(this.state.currentUser);
     const response = await getGames(this.state.currentUser);
     this.setState({ games: response.data });
     this.forceUpdate();
@@ -35,7 +33,6 @@ class Games extends Component {
   reloadPageData = async () => {
     const response = await getGames(this.state.currentUser);
     this.setState({ games: response.data });
-    this.forceUpdate();
   };
 
   handleDelete = async game => {
@@ -85,10 +82,10 @@ class Games extends Component {
   };
 
   getPagedData = () => {
+
     const {
       pageSize,
       currentPage,
-      games: allgames,
       selectedType,
       sortColumn
     } = this.state;
@@ -106,6 +103,7 @@ class Games extends Component {
   };
 
   render() {
+
     const { length: count } = this.state.games;
     const { pageSize, currentPage, sortColumn } = this.state;
 

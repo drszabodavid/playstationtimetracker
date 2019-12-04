@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {saveGame} from '../services/fakeGameService'
+import {saveGame} from '../services/GameService'
 import "./css/search.css";
 import "./css/searchbar.css";
 

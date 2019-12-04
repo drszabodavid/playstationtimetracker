@@ -7,16 +7,13 @@ const ListGroup = ({
   onItemSelect,
   selectedItem
 }) => {
-  {
-    console.log(items);
-  }
 
   return (
     <ul className="list-group genres">
       {items.map(item => (
         <li
           onClick={() => onItemSelect(item)}
-          key={item[valueProperty]}
+          key={item}
           className={
             item === selectedItem
               ? "list-group-item active genres-field"

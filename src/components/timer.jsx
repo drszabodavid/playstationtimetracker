@@ -1,4 +1,3 @@
-import { updatePlayTime } from "../services/fakeGameService";
 
 const React = require("react");
 const ms = require("pretty-ms");
