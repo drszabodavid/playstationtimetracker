@@ -15,14 +15,14 @@ class RegisterForm extends Form {
     username: Joi.string()
       .required()
       .email()
-      .label("E-mail"),
+      .label("Username"),
     password: Joi.string()
       .required()
       .min(5)
       .label("Password"),
     name: Joi.string()
       .required()
-      .label("Username")
+      .label("Name")
   };
 
   doSubmit = async () => {

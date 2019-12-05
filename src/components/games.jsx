@@ -5,6 +5,7 @@ import { paginate } from "../utils/paginate";
 import GamesTable from "./gamesTable";
 import _ from "lodash";
 import "./css/games.css";
+
 import {
   deleteGame,
   getGames,
@@ -36,24 +37,36 @@ class Games extends Component {
   };
 
   handleDelete = async game => {
+    const originalGames = this.state.games;
+    const games = originalGames.filter(g => g.id !== game.id);
+    this.setState({ games });
+
     await deleteGame(game);
-    this.reloadPageData();
-    this.forceUpdate();
   };
 
   handleComplete = async game => {
+    const games = [...this.state.games];
+    const index = games.indexOf(game);
+    games[index] = { ...games[index] };
+    games[index].completed = !games[index].completed;
+    this.setState({ games });
+
     await completeGame(game);
-    this.reloadPageData();
-    this.forceUpdate();
   };
 
   handleLike = async game => {
+    const games = [...this.state.games];
+    const index = games.indexOf(game);
+    games[index] = { ...games[index] };
+    games[index].liked = !games[index].liked;
+    this.setState({ games });
+
     await starGame(game);
-    this.reloadPageData();
-    this.forceUpdate();
+
   };
 
   handleRecord = async (game, time) => {
+
     await updatePlayTime(game, time);
     this.reloadPageData();
     this.forceUpdate();
