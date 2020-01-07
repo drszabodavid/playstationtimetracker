@@ -17,7 +17,7 @@ class Search extends Component {
     if (e.key === "Enter") {
       e.preventDefault();
       e.stopPropagation();
-      let hltb = require("howlongtobeat");
+      let hltb = require("../services/howlongtobeat");
       let hltbService = new hltb.HowLongToBeatService();
       hltbService.search(this.state.searchedGame, ).then(result => {
         this.setState({ searchData: result });
@@ -27,7 +27,7 @@ class Search extends Component {
   };
 
   componentDidMount() {
-    let hltb = require("howlongtobeat");
+    let hltb = require("../services/howlongtobeat");
     let hltbService = new hltb.HowLongToBeatService();
     hltbService.search("").then(result => {
       this.setState({ searchData: result });
