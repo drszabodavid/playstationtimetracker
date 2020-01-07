@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-axios.defaults.baseURL = "https://playstationtimetrackerbackend.herokuapp.com/ ";
+axios.defaults.baseURL = "https://playstationtimetrackerbackend.herokuapp.com/";
 
 axios.interceptors.response.use(null, error => {
   const expectedError =
