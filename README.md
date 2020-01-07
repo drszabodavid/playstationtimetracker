@@ -1,18 +1,17 @@
 # PlayStation Time Tracker
 A web application to track how much time you spent on gaming.
 
-## Check out the app on Heroku
+## Check out the deployed application on Heroku
 https://playstationtimetracker.herokuapp.com/
-
-Please enable CORS to use the search function of the app. 
-I recommend the Moesif CORS extension for Chrome.
 
 ## What is this
 This is a demo project I made to get familiar with React, frontend development and the usage of APIs.
 The purpose of the app is to track your gaming process by registering how many hours you spend on gaming and save this data  into your database. Also, the remaining time to finish a game is also calculated accordingly.
 
-Currently there's no backend added to the application and it works with a **preloaded database**.
-The playtime is also modified so it counts hours instead of millisecond for testing purposes.
+Currently playtime is also modified so it counts hours instead of millisecond for testing purposes.
+
+This repo contains the frontend part of the application. 
+The backend can be found here : https://github.com/drszabodavid/playstationtimetracker_backend
 
 ## How to use
 
