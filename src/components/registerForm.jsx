@@ -4,6 +4,7 @@ import Form from "./common/form";
 import * as userService from "../services/userService";
 import auth from "../services/authService"
 import "./css/form.css";
+import {toast} from "react-toastify";
 
 class RegisterForm extends Form {
   state = {
@@ -30,13 +31,13 @@ class RegisterForm extends Form {
     try {
       const response = await userService.register(this.state.data);
       auth.loginWithJwt(response.headers["x-auth-token"]);
-      window.location = "/";
+      window.location = "/login";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };
-
         errors.username = ex.response.data;
         this.setState({ errors });
+        toast("This username is already registered");
       }
     }
   };
