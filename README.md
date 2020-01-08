@@ -23,7 +23,9 @@ On the homepage the user gets the trending games with the estimated time it take
 ![frontpage](https://user-images.githubusercontent.com/35307122/71980778-2ab47300-3221-11ea-8935-4b79d3000fcd.png)
 
 Before able to track a new game, the user need to be registered in the database and then log into his/her own account. This can be done on the registration and login pages.
+
 ![newregistration](https://user-images.githubusercontent.com/35307122/71980705-08baf080-3221-11ea-9385-559919d327a4.png)
+
 ![newlogin](https://user-images.githubusercontent.com/35307122/71980689-fe98f200-3220-11ea-9d6c-b12023a24dd8.png)
 
 After registration new games can be added to the user's game list by clicking on the chosen game.
