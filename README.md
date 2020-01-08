@@ -7,10 +7,10 @@ https://playstationtimetracker.herokuapp.com/
 
 ## What is this
 This is a demo project I made to get familiar with React, frontend development and the usage of APIs.
-The purpose of the app is to track your gaming process by registering how many hours you spend on gaming and save this data  into your database. Also, the remaining time to finish a game is also calculated accordingly.
+The purpose of the app is to track your gaming process by registering how many hours you spend on gaming and save this data  into a database. Also, the remaining time to finish a game is also calculated accordingly.
 To get the basic game data I use a third party API called 'howlongtobeat'.
 
-Currently playtime is also modified so it counts hours instead of millisecond for testing purposes.
+Currently playtime is modified so it counts hours instead of millisecond for testing purposes.
 
 This repo contains the frontend part of the application. 
 The backend can be found here : https://github.com/drszabodavid/playstationtimetracker_backend
