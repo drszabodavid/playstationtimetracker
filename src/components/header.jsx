@@ -9,7 +9,7 @@ class Header extends Component {
             <div className="header-image">
                 <div className="header-text">
                     <h1>
-                        PlayStation Time Counter</h1>
+                        PlayStation Time Tracker</h1>
                     <p className="header-subtext">
                         Record how much time you waste on gaming
                     </p>
