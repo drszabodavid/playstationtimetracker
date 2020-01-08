@@ -4,7 +4,7 @@ import "./css/search.css";
 import "./css/searchbar.css";
 
 class Search extends Component {
-  state = { searchedGame: null, searchData: [] };
+  state = { searchedGame: "", searchData: [] };
 
   onChange = e => {
     e.preventDefault();
@@ -40,7 +40,7 @@ class Search extends Component {
 
   renderList = game => {
     return (
-      <div>
+      <div key={game.id}>
         <div className="clear" />
         <div className="clear" />
         <li
@@ -60,14 +60,14 @@ class Search extends Component {
         >
           {" "}
           <div className="search_list_image">
-            <a aria-label={game.name} title={game.name}>
+            <a href="/#" aria-label={game.name} title={game.name}>
               <img alt="Box Art" src={game.imageUrl} />
             </a>
           </div>{" "}
           <div className="search_list_details">
             {" "}
             <h3 className="shadow_text text_white">
-              <a className="text_white" title={game.name}>
+              <a href="/#" className="text_white" title={game.name}>
                 {game.name}
               </a>
             </h3>{" "}
