@@ -67,9 +67,9 @@ class Search extends Component {
           <div className="search_list_details">
             {" "}
             <h3 className="shadow_text text_white">
-              <a href="/#" className="text_white" title={game.name}>
+              <p className="text_white" title={game.name}>
                 {game.name}
-              </a>
+              </p>
             </h3>{" "}
             <div className="search_list_details_block">
               {" "}
