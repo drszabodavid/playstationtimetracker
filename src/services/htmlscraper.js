@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -14,6 +13,7 @@ const request = require('request');
  */
 class HtmlScraper {
     detailHtml(url) {
+        // eslint-disable-next-line require-yield
         return __awaiter(this, void 0, void 0, function* () {
             let result = new Promise((resolve, reject) => {
                 request.get(url, { followRedirect: false }, (error, response, body) => {
@@ -32,6 +32,7 @@ class HtmlScraper {
         });
     }
     search(query, url) {
+        // eslint-disable-next-line require-yield
         return __awaiter(this, void 0, void 0, function* () {
             let result = new Promise((resolve, reject) => {
                 request.post(url, {

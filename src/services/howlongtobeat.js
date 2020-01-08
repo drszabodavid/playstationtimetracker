@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -70,7 +69,7 @@ class HowLongToBeatParser {
         const $ = cheerio.load(html);
         let gameName = '';
         let imageUrl = '';
-        let timeLabels = new Array();
+        let timeLabels = [];
         let gameplayMain = 0;
         let gameplayMainExtra = 0;
         let gameplayComplete = 0;
@@ -103,7 +102,7 @@ class HowLongToBeatParser {
      * @return an Array<HowLongToBeatEntry>s
      */
     static parseSearch(html, searchTerm) {
-        let results = new Array();
+        let results = [];
         const $ = cheerio.load(html);
         //check for result page
         if ($('h3').length > 0) {
@@ -114,7 +113,7 @@ class HowLongToBeatParser {
                 let detailId = gameTitleAnchor.attribs.href.substring(gameTitleAnchor.attribs.href.indexOf('?id=') + 4);
                 let gameImage = $(gameTitleAnchor).find('img')[0].attribs.src;
                 //entry.setPropability(calculateSearchHitPropability(entry.getName(), searchTerm));
-                let timeLabels = new Array();
+                let timeLabels = [];
                 let main = 0;
                 let mainExtra = 0;
                 let complete = 0;
@@ -229,7 +228,7 @@ class HowLongToBeatParser {
             shorter = temp;
         }
         let longerLength = longer.length;
-        if (longerLength == 0) {
+        if (longerLength === 0) {
             return 1.0;
         }
         let distance = levenshtein.get(longer, shorter);
