@@ -1,73 +1,50 @@
-# playstationtimetracker
-A web application to track how much time you sent on gaming.
+# PlayStation Time Tracker
+A web application to track how much time you spent on gaming.
+
+## Check out the deployed application on Heroku
+https://playstationtimetracker.herokuapp.com/
+
+## What is this
+This is a demo project I made to get familiar with React, frontend development and the usage of APIs.
+The purpose of the app is to track your gaming process by registering how many hours you spend on gaming and save this data  into your database. Also, the remaining time to finish a game is also calculated accordingly.
+
+Currently playtime is also modified so it counts hours instead of millisecond for testing purposes.
+
+This repo contains the frontend part of the application. 
+The backend can be found here : https://github.com/drszabodavid/playstationtimetracker_backend
+
+## How to use
+
+On the homepage the user gets the trending games with the estimated time it takes to finish them.
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![homepage](https://user-images.githubusercontent.com/35307122/69966337-6ec3a200-1516-11ea-906c-2337f844d253.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+If he/she wants the game can be added to the user's game list by clicking on the chosen game.
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![searchfunction](https://user-images.githubusercontent.com/35307122/69966512-d843b080-1516-11ea-82df-7b3087aa835b.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+Under 'My Games' the user can see his/her saved games and additional data.\
+Games can be starred, marked as completed, reopened and deleted from the list.\
+The starred games are filtered on the 'Starred' tab and the completed ones on the 'Completed' tab.\
+If the timer is started it counts the gaming time and if paused, the interval gets added to 'My Time' field and the new 'Remaining Time' is calculated.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![full2](https://user-images.githubusercontent.com/35307122/69967429-a59ab780-1518-11ea-85ee-e90c36b7e510.png)
 
-### `npm run build`
+## Future plans
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Currently I'm working on the backend part of the application. My plan is to finish the user handling so users can be registered, login and get their own database with unique saved games.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
