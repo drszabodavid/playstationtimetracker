@@ -1,7 +1,7 @@
 import http from "./httpService";
 
 export function getGames(userId) {
-  return http.get(`/${userId}/games`);
+  return http.get(`/games/${userId}`);
 }
 
 export function getGame(id) {
