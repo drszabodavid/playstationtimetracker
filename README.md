@@ -5,7 +5,7 @@ A web application to track how much time you spend on gaming.
 ## Check out the deployed application on Heroku
 https://playstationtimetracker.herokuapp.com/ \
 \
-Use the following credentials to log in wothout registration : \
+Use the following credentials to log in without registration : \
 username : codecool \
 password : 12345 
 
