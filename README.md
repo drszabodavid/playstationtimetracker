@@ -3,7 +3,11 @@
 A web application to track how much time you spend on gaming.
 
 ## Check out the deployed application on Heroku
-https://playstationtimetracker.herokuapp.com/
+https://playstationtimetracker.herokuapp.com/ \
+\
+Use the following credentials to log in wothout registration : \
+username : codecool \
+password : 12345 
 
 ## What is this
 This is a demo project I made to get familiar with React, frontend development and the usage of APIs.
